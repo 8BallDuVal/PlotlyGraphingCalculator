@@ -3,6 +3,11 @@ Graph functions, take integrals/derivatives of those functions, and plot them on
 
 Written in Python 3.6.5 for Windows. Uses the Plotly API to create interactive graphs that open in a web browser.
 
+Required packages:
+- Sympy
+- Numpy
+- Plotly
+
 The program was written using Object-Oriented Programming, and requires that you initialize a Calculus object with a function string.
 
 Here's a quick example of initializing a Calculus object:
