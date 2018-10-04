@@ -84,6 +84,37 @@ class Calculus:
         
         data = [trace, trace2]
         ply.plot(data, filename = 'function-plot.html')
+        
+    def plot_integral(self):
+        integral_xdomain = self.x_values.copy()
+        yval_temp = []
+        integral_yrange =  np.array(yval_temp, dtype = np.float32)
+        integral_function = self.take_integral()
+        
+        for x in integral_xdomain:
+            try:
+                yval_temp.append(float(eval(str(integral_function))))
+            except:
+                yval_temp.append(math.inf)
+        integral_yrange = np.append(integral_yrange, yval_temp)
+        
+        trace = go.Scatter(
+            x = self.x_values,
+            y = self.y_values,
+            mode = 'lines',
+            name = 'Original Function'
+        )
+        
+        trace2 = go.Scatter(
+            x = integral_xdomain,
+            y = integral_yrange,
+            mode = 'lines',
+            name = 'integral Function'
+        )
+        
+        
+        data = [trace, trace2]
+        ply.plot(data, filename = 'function-plot.html')
     
     def __repr__(self):
         return "Calculus('{}')".format(self.function)
