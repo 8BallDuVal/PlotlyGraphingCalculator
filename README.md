@@ -43,4 +43,12 @@ For Tigonometric functions, simply use cos(x), sin(x), tan(x), sec(x), csc(x), c
 For more information on what syntax may or may not be accepted, visit https://docs.sympy.org/0.7.1/index.html
 ********************************************************************************************************************************
 
+There are two python files included in this repository, perform_calc.py and perform_calc_tester.py.
+
+The perform_calc.py file is the main program file and should not be ran directly in a python interpreter/command prompt window.
+
+The perform_calc_tester.py file is where you should be writing your code, testing out what the program does and how it works.
+
+********************************************************************************************************************************
+
 This is still a work in progress. Let me know if you have any questions/conerns!
