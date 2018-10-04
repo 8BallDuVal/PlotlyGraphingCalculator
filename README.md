@@ -44,7 +44,7 @@ Also, if there are any fractions in the equation, make sure and include parenthe
 If there are square roots in the function, use sqrt():
 sqrt(6*x^2-3)/(9*x^2-4)
 
-For Tigonometric functions, simply use cos(x), sin(x), tan(x), sec(x), csc(x), cot(x).
+For Trigonometric functions, simply use cos(x), sin(x), tan(x), sec(x), csc(x), cot(x).
 
 For more information on what syntax may or may not be accepted, visit https://docs.sympy.org/0.7.1/index.html
 ********************************************************************************************************************************
