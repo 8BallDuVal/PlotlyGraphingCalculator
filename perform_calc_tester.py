@@ -48,3 +48,6 @@ first_func.plot_points()
 
 #first_func.plot_derivative()
 
+############ Plot Points of Integral Functions  ##########
+
+#first_func.plot_integral()
