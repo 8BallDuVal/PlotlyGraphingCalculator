@@ -8,6 +8,7 @@ import numpy as np
 import math
 import plotly.offline as ply 
 import plotly.graph_objs as go
+from sympy.solvers import solve
 
 class Calculus:
     x_values = []
@@ -16,19 +17,21 @@ class Calculus:
         self.x = Symbol('x')
         self.y = Symbol('y')
         self.z = Symbol('z')
-        
-        
         self.function = function
+
         if '^' in self.function:
             self.function = self.function.replace('^', '**')
     
     def take_derivative(self):
         deriv= Derivative(self.function, self.x)
-        return deriv.doit()
+        return str(deriv.doit())
     
     def take_integral(self):
         integral = integrate(self.function, self.x)
-        return integral.doit()
+        return str(integral.doit())
+    
+    def definite_integral(self, *args):
+        return integrate(self.function, args)
     
     def set_domain(self, range):
         self.x_values = range     
@@ -44,13 +47,18 @@ class Calculus:
         self.y_values = np.append(self.y_values, yvals)
         return self.y_values
     
+    def get_domain(self):
+        return self.x_values
+    
+    def get_range(self):
+        return self.y_values
+    
     def plot_points(self):
         trace = go.Scatter(
             x = self.x_values,
             y = self.y_values,
             mode = 'lines',
-            name = 'Plot 1'
-        )
+            name = 'Plot 1')
         data = [trace]
         ply.plot(data, filename = 'function-plot.html')
         
@@ -71,16 +79,13 @@ class Calculus:
             x = self.x_values,
             y = self.y_values,
             mode = 'lines',
-            name = 'Original Function'
-        )
+            name = 'Original Function')
         
         trace2 = go.Scatter(
             x = derivative_xdomain,
             y = derivative_yrange,
             mode = 'lines',
-            name = 'Derivative Function'
-        )
-        
+            name = 'Derivative Function')
         
         data = [trace, trace2]
         ply.plot(data, filename = 'function-plot.html')
@@ -102,19 +107,19 @@ class Calculus:
             x = self.x_values,
             y = self.y_values,
             mode = 'lines',
-            name = 'Original Function'
-        )
+            name = 'Original Function')
         
         trace2 = go.Scatter(
             x = integral_xdomain,
             y = integral_yrange,
             mode = 'lines',
-            name = 'integral Function'
-        )
-        
+            name = 'integral Function')
         
         data = [trace, trace2]
         ply.plot(data, filename = 'function-plot.html')
+    
+    def solve_for(self, variable):     
+        return solve(self.function, variable)      
     
     def __repr__(self):
         return "Calculus('{}')".format(self.function)
@@ -124,6 +129,3 @@ class Calculus:
     
     def __add__(self, other):
         return self.function + ' + ' + other.function
-
-        
-
