@@ -30,9 +30,6 @@ class Calculus:
         integral = integrate(self.function, self.x)
         return str(integral.doit())
     
-    def definite_integral(self, *args):
-        return integrate(self.function, args)
-    
     def set_domain(self, range):
         self.x_values = range     
         
