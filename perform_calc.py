@@ -3,6 +3,11 @@ Created on Oct 3, 2018
 
 @author: daduva
 '''
+'''
+Created on Oct 3, 2018
+
+@author: daduva
+'''
 from sympy import Symbol, Derivative, integrate
 import math
 import plotly.offline as ply 
@@ -21,7 +26,8 @@ class Calculus:
         integral = integrate(self.function, x)
         return integral.doit()
     def definite_integral(self, *args):
-        return integrate(self.function, args)
+        x = Symbol('x')
+        return integrate(self.function, (x, args))
     def set_domain(self, range):
         self.x_values = range     
     def set_range(self):
@@ -91,13 +97,9 @@ class Calculus:
     def solvex(self, variable):
         x = Symbol('x')     
         return self.function.subs(x,variable)    
-    
     def __repr__(self):
         return "Calculus('{}')".format(self.function)
     def __str__(self):
         return "Function: {}".format(self.function)  
     def __add__(self, other):
         return self.function + ' + ' + other.function
-
-        
-
