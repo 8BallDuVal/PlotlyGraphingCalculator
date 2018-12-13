@@ -61,7 +61,8 @@ y_list = first_func.set_range()
 # integral_two = Calculus(second_integral)
 # print('2nd Integral '+str(integral_two))
 
-''' Set the equation equal to zero and solve for a variable '''
+''' Give the function a number to substitute for x. It is then solved for 
+    the y value. (You give me an x, I give you a y!)'''
 # print(first_func.solvex(3))
 
 ''' __repr__, __str__, __add__ '''
@@ -70,3 +71,7 @@ y_list = first_func.set_range()
 # second_func = Calculus('2x^2')
 # third_func = first_func + second_func
 # print('adding two Calculus() objects together: '+third_func)
+
+
+''' Take a definite Integral '''
+# print(first_func.definite_integral(-3,4))
