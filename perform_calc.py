@@ -3,11 +3,6 @@ Created on Oct 3, 2018
 
 @author: daduva
 '''
-'''
-Created on Oct 3, 2018
-
-@author: daduva
-'''
 from sympy import Symbol, Derivative, integrate
 import math
 import plotly.offline as ply 
