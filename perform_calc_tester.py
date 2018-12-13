@@ -17,7 +17,10 @@ Created on Oct 4, 2018
 from perform_calc import *
 
 ''' Input Function '''
-first_func = Calculus('x^2-1')
+x = Symbol('x') # Remember to include this every time at the top of your file.
+                # If you don't, the Calculus Object below will have error messages.
+ 
+first_func = Calculus(x**2-1)
 
 ''' Set Domain '''
 first_func.set_domain(list(range(-10, 10)))
@@ -59,7 +62,7 @@ y_list = first_func.set_range()
 # print('2nd Integral '+str(integral_two))
 
 ''' Set the equation equal to zero and solve for a variable '''
-# print(first_func.solve_for('x'))
+# print(first_func.solvex(3))
 
 ''' __repr__, __str__, __add__ '''
 # print('__str__ representation: '+str(first_func))
