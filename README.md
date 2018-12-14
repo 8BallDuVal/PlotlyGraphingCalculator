@@ -4,18 +4,20 @@ Graph functions, take integrals/derivatives of those functions, and plot them on
 Written in Python 3.6.5 for Windows. Uses the Plotly API to create interactive graphs that open in a web browser.
 
 Required packages:
-- Sympy
-- Plotly
+- Sympy 1.1.1
+- Plotly 3.2.0
 
 The program was written using Object-Oriented Programming, and requires that you initialize a Calculus object with a function string.
 
 Here's a quick example of initializing a Calculus object:
-    x = Symbol('x')
+    x = Symbol('x')****
     function = Calculus(3*x**3-4)
 
 The function variable is now considered a Calculus object, and you can use the program's methods to take derivatives, integrate, or plot the function.
 
-Here is a list of the included methods:
+****The x = Symbol('x') line is not necessary if the Calculus object is being created in the main perform_calc.py file. However, if you want to start a new python file and use the Calclulus object within that file, you must include the x = Symbol('x') line at the top of the file.
+
+Here is a list of the included methods/functions:
 - __init__ --> initializes the object with specific properties.
 - __repr__ --> returns an easily readible representation of the object when you print an object variable to the console.
 - __str__ --> similar to __repr__, this method simply returns the function of the object.
@@ -34,9 +36,9 @@ Here is a list of the included methods:
 
 ********************************************************************************************************************************
 Some notes about how to enter a function:
-For this program, Python requires that you include an asterisk ('*') in between each variable and number. For example, if you wanted to enter the function:
+For this program, Python requires that you include an asterisk (*) in between each variable and number. To raise a variable to a power, you must use two asterisks (**). For example, if you wanted to enter the function:
 
-6x**2+5x-3
+6x^2+5x-3
 
 You would have to make sure and enter it in as it is below to avoid any error messages: 
 6*x**2+5*x-3
@@ -51,13 +53,9 @@ For Trigonometric functions, simply use cos(x), sin(x), tan(x), sec(x), csc(x), 
 
 For more information on what syntax may or may not be accepted, visit https://docs.sympy.org/0.7.1/index.html
 ********************************************************************************************************************************
+There is one python file included in this repository, perform_calc.py.
 
-There are two python files included in this repository, perform_calc.py and perform_calc_tester.py.
-
-The perform_calc.py file is the main program file and should not be ran directly in a python interpreter/command prompt window.
-
-The perform_calc_tester.py file is where you should be writing your code, testing out what the program does and how it works.
-
+The perform_calc.py file is the main program file, which also includes some examples testing out what the program does and how it works (located at the very bottom of the perform_calc.py file). This can be ran directly in a python interpreter/command prompt window.
 ********************************************************************************************************************************
 
 This is still a work in progress. Let me know if you have any questions/conerns!
