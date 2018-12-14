@@ -10,8 +10,8 @@ Required packages:
 The program was written using Object-Oriented Programming, and requires that you initialize a Calculus object with a function string.
 
 Here's a quick example of initializing a Calculus object:
-    x = Symbol('x')****
-    function = Calculus(3*x**3-4)
+x = Symbol('x')****
+function = Calculus(3*x**3-4)
 
 The function variable is now considered a Calculus object, and you can use the program's methods to take derivatives, integrate, or plot the function.
 
